@@ -6,7 +6,9 @@
 		<script src="http://code.jquery.com/jquery-1.12.1.min.js"></script>
 </head>
 <body>
-<div id="container">
+<button id="SignUp"> Sign Up </button>
+<button id="SignIn">Sign In</button>
+<div id="signUp">
 	<form id="theform" action="/" method="post">
 
 		<label for="firstName"> First Name </label><br>
@@ -25,6 +27,19 @@
 			<input type="password" class ="required" auto-complete = "false" id="conPass">
 		<br><br>
 		<input type="button" id="added" value="Submit">
+		<br><br>
+	</form>
+</div>
+
+<div id="signIn">
+	<form method="get">
+		<label for="email">Email</label><br>
+		<input type="email" id="mail">
+		<br>
+		<label for="pass">Password</label><br>
+		<input type="password" id="pass">
+		<br><br>
+		<input type="submit" value="Sign In" id="signIn">
 	</form>
 </div>
 <script src="js/index.js"></script>

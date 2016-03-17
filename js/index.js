@@ -1,4 +1,18 @@
-$(function(e){
+$(function(){
+	$("#signUp").hide();
+		$("#SignUp").click(function() {
+			$("#signIn").slideUp("slow", function() {
+				$("#signUp").slideDown("slow");
+			});
+	});
+	$("#SignIn").click(function() {
+		$("#signUp").slideUp("slow", function() {
+			$("#signIn").slideDown("slow");
+			});
+	});
+// });		
+
+// $(function(){
 	$("#added").on("click", function(){
 
 		var Firstname = $('#firstName').val(),
