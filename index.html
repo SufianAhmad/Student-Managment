@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Student Info</title>
+	<h1>Login&SignUp</h1>
+		<script src="http://code.jquery.com/jquery-1.12.1.min.js"></script>
+</head>
+<body>
+<div id="container">
+	<form id="theform" action="/" method="post">
+
+		<label for="firstName"> First Name </label><br>
+			<input type="text" id="firstName" class ="required" auto-complete = "false" id="firstName">
+		<br>
+		<label for="lastName"> Last Name </label><br>
+			<input type="text" class ="required" auto-complete = "false" id="lastName">
+		 <br>
+		<label for="mail"> Email </label><br>
+			<input type="email" class="required email" auto-complete = "false" id="mail">
+		 <br>
+		<label for="pass"> Password </label><br>
+			<input type="password" class ="required" auto-complete = "false" id="pass">
+		 <br>
+		<label for="conPass"> Confirm Password </label><br>
+			<input type="password" class ="required" auto-complete = "false" id="conPass">
+		<br><br>
+		<input type="button" id="added" value="Submit">
+	</form>
+</div>
+<script>
+	$(function(e){
+		$("#added").on("click", function(){
+
+			var Firstname = $('#firstName').val(),
+					Lastname = $('#lastName').val(),
+					Email = $('#mail').val(),
+					pass = document.getElementById("pass").value;
+					Confirm = document.getElementById("conPass").value;
+
+			if (Firstname == "") {
+				alert("Fisrt Name is empty");
+				return;
+			}
+			else if (Lastname == "") {
+				alert("Last Name is empty");
+				return;
+			}else if (Email == "") {
+				alert("Email is required with correct formate");
+				return;
+			} else if (pass == "") {
+				alert("Password is required");
+				return
+			}else if (pass != Confirm) {
+				alert("Password missmatch");
+				return;
+			};		
+			var objc = {
+				First_name: Firstname,
+				Last_name: Lastname,
+				email: Email,
+				password: pass
+			};		
+			console.log(objc);
+		
+	// //////////
+	// $.ajax({
+	// 	type: 'POST',
+ //    url: "https://api.mongolab.com/api/1/databases/mydb/collections/mydb?apiKey=ftIHhADklaeFUeTw4YzKZdlb_MWQYfGO",
+ //    data: JSON.stringify(objc),
+ //    datatype: 'json',
+ //    contentType: "application/json; charset=utf-8",
+ //    success: function(result){
+ //    	console.log(result);
+ //    },
+ //    error:function(res){
+ //        console.log("Bad thing happend! " + res.statusText);
+ //    }
+ //  });
+		});
+	});
+</script>
+</body>
+</html>
