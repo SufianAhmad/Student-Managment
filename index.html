@@ -6,7 +6,9 @@
 		<script src="http://code.jquery.com/jquery-1.12.1.min.js"></script>
 </head>
 <body>
-<div id="container">
+<button id="SignUp"> Sign Up </button>
+<button id="SignIn">Sign In</button>
+<div id="signUp">
 	<form id="theform" action="/" method="post">
 
 		<label for="firstName"> First Name </label><br>
@@ -25,59 +27,21 @@
 			<input type="password" class ="required" auto-complete = "false" id="conPass">
 		<br><br>
 		<input type="button" id="added" value="Submit">
+		<br><br>
 	</form>
 </div>
-<script>
-	$(function(e){
-		$("#added").on("click", function(){
 
-			var Firstname = $('#firstName').val(),
-					Lastname = $('#lastName').val(),
-					Email = $('#mail').val(),
-					pass = document.getElementById("pass").value;
-					Confirm = document.getElementById("conPass").value;
-
-			if (Firstname == "") {
-				alert("Fisrt Name is empty");
-				return;
-			}
-			else if (Lastname == "") {
-				alert("Last Name is empty");
-				return;
-			}else if (Email == "") {
-				alert("Email is required with correct formate");
-				return;
-			} else if (pass == "") {
-				alert("Password is required");
-				return
-			}else if (pass != Confirm) {
-				alert("Password missmatch");
-				return;
-			};		
-			var objc = {
-				First_name: Firstname,
-				Last_name: Lastname,
-				email: Email,
-				password: pass
-			};		
-			console.log(objc);
-		
-	// //////////
-	// $.ajax({
-	// 	type: 'POST',
- //    url: "https://api.mongolab.com/api/1/databases/mydb/collections/mydb?apiKey=ftIHhADklaeFUeTw4YzKZdlb_MWQYfGO",
- //    data: JSON.stringify(objc),
- //    datatype: 'json',
- //    contentType: "application/json; charset=utf-8",
- //    success: function(result){
- //    	console.log(result);
- //    },
- //    error:function(res){
- //        console.log("Bad thing happend! " + res.statusText);
- //    }
- //  });
-		});
-	});
-</script>
+<div id="signIn">
+	<form method="get">
+		<label for="email">Email</label><br>
+		<input type="email" id="mail">
+		<br>
+		<label for="pass">Password</label><br>
+		<input type="password" id="pass">
+		<br><br>
+		<input type="submit" value="Sign In" id="signIn">
+	</form>
+</div>
+<script src="js/index.js"></script>
 </body>
 </html>
