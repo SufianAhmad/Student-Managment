@@ -1,25 +1,23 @@
 $(function(){
 	$("#signUp").hide();
-		$("#SignUp").click(function() {
-			$("#signIn").slideUp("slow", function() {
-				$("#signUp").slideDown("slow");
-			});
+	$("#SignUp").click(function() {
+		$("#signIn").slideUp("slow", function() {
+			$("#signUp").slideDown("slow");
+		});
 	});
 	$("#SignIn").click(function() {
 		$("#signUp").slideUp("slow", function() {
 			$("#signIn").slideDown("slow");
 			});
 	});
-// });		
 
-// $(function(){
 	$("#added").on("click", function(){
 
 		var Firstname = $('#firstName').val(),
 				Lastname = $('#lastName').val(),
 				Email = $('#mail').val(),
-				pass = document.getElementById("pass").value;
-				Confirm = document.getElementById("conPass").value;
+				pass = $("#pass").val();
+				Confirm = $("#conPass").val(); 		
 
 		if (Firstname == "") {
 				alert("Fisrt Name is empty");
@@ -36,16 +34,18 @@ $(function(){
 		} else if (pass != Confirm) {
 				alert("Password missmatch");
 				return;
-		};		
+		};
+		// encrypt password using MD5 technique 
+		$("#encryped").val(CryptoJS.AES.encrypt(pass, "/"));
+			var enc = $("#encryped").val();
 		var objc = {
 			First_name: Firstname,
 			Last_name: Lastname,
 			email: Email,
-			password: pass
+			password: enc
 		};		
-		//console.log(objc);
 		
-							///// ajax request to insert data in mongodb /////
+		///// ajax request to insert data in mongodb /////
 		$.ajax({
 			type: 'POST',
 	    url: "https://api.mongolab.com/api/1/databases/mydb/collections/mydb?apiKey=ftIHhADklaeFUeTw4YzKZdlb_MWQYfGO",
