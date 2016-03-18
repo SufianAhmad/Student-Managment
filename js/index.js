@@ -46,18 +46,18 @@ $(function(){
 		//console.log(objc);
 		
 							///// ajax request to insert data in mongodb /////
-	$.ajax({
-		type: 'POST',
-    url: "https://api.mongolab.com/api/1/databases/mydb/collections/mydb?apiKey=ftIHhADklaeFUeTw4YzKZdlb_MWQYfGO",
-    data: JSON.stringify(objc),
-    datatype: 'json',
-    contentType: "application/json; charset=utf-8",
-    success: function(result){
-    	console.log(result);
-    },
-    error:function(res){
-        console.log("Bad thing happend! " + res.statusText);
-    }
-  });
-		});
+		$.ajax({
+			type: 'POST',
+	    url: "https://api.mongolab.com/api/1/databases/mydb/collections/mydb?apiKey=ftIHhADklaeFUeTw4YzKZdlb_MWQYfGO",
+	    data: JSON.stringify(objc),
+	    datatype: 'json',
+	    contentType: "application/json; charset=utf-8",
+	    success: function(result){
+	    	console.log(result);
+	    },
+	    error:function(res){
+	        console.log("Bad thing happend! " + res.statusText);
+	    }
+	  });
 	});
+});
