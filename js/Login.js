@@ -14,14 +14,18 @@ $(function(){
 	    contentType: "application/json; charset=utf-8",
 	    success: function(result){
 	    	console.log(result);
-	    	//console.log(result[0].Email);
 
 	    	jQuery.grep(result, function(obj) {
-	  			// obj.email === "sufian@gmail.com";
+	  			// decrypt password
+	  			var decryptionText = obj.password;
+	  			$('#decryptedtxt').val((CryptoJS.AES.decrypt(decryptionText, "/")).toString(CryptoJS.enc.Utf8));
+  				var dec = $("#decryptedtxt").val();
+  				console.log(dec);
+
 	  			if (obj.email !== LoginMail) {
 	  				console.log("Mail id is not OK");
 	  				return;
-	  			}else if(obj.password !== LoginPass)
+	  			}else if(dec !== LoginPass)
 	  			{
 	  				console.log("Password is Incorrect");
 	  				return;
