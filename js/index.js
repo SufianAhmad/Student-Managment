@@ -4,11 +4,11 @@ $(function(){
 			$("#signIn").slideUp("slow", function() {
 				$("#signUp").slideDown("slow");
 			});
-	});
+		});
 	$("#SignIn").click(function() {
 		$("#signUp").slideUp("slow", function() {
 			$("#signIn").slideDown("slow");
-			});
+		});
 	});
 // });		
 
