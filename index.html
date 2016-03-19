@@ -1,65 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Student Info</title>
-	<div>
-		<h1>Login&SignUp</h1>
-	</div>
-		<!-- Jquery CDN -->
-		<script src="http://code.jquery.com/jquery-1.12.1.min.js"></script>
-		<!-- Bootstrap JS CDN -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-		<!-- MD5 encryption CDN -->
-		<script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
-		<script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/aes.js"></script>
-		<!-- Bootstrap CSS CDN -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-		<!-- Bootstrap theme CDN -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-		<!-- Font-awsome CDN -->
-		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <title>Student Info</title>
+  <div>
+    <h1>Login&SignUp</h1>
+  </div>
+    <!-- Jquery CDN -->
+    <script src="http://code.jquery.com/jquery-1.12.1.min.js"></script>
+    <!-- Bootstrap JS CDN -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <!-- MD5 encryption CDN -->
+    <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
+    <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/aes.js"></script>
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Bootstrap theme CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <!-- Font-awsome CDN -->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
 </head>
 <body>
-	<button id="SignUp"> Sign Up </button>
-	<button id="SignIn">Sign In</button>
-	<!-- SignUp form -->
+  <button id="SignUp"> Sign Up </button>
+  <button id="SignIn">Sign In</button>
+  <!-- SignUp form -->
 <div id="signUp">
-	<form id="theform" action="/" method="post">
+  <form id="theform" action="/" method="post">
 
-		<label for="firstName"> First Name </label><br>
-			<input type="text" id="firstName" class ="required" auto-complete = "false" id="firstName">
-		<br>
-		<label for="lastName"> Last Name </label><br>
-			<input type="text" class ="required" auto-complete = "false" id="lastName">
-		 <br>
-		<label for="mail"> Email </label><br>
-			<input type="email" class="required email" auto-complete = "false" id="mail">
-		 <br>
-		<label for="pass"> Password </label><br>
-			<input type="password" class ="required" auto-complete = "false" id="pass">
-		 <br>
-		<label for="conPass"> Confirm Password </label><br>
-			<input type="password" class ="required" auto-complete = "false" id="conPass">
-		<br><br>
-		<input type="button" id="added" value="Submit">
-		<br><br>
-	</form>
+    <label for="firstName"> First Name </label><br>
+      <input type="text" id="firstName" class ="required" auto-complete = "false" id="firstName">
+    <br>
+    <label for="lastName"> Last Name </label><br>
+      <input type="text" class ="required" auto-complete = "false" id="lastName">
+     <br>
+    <label for="mail"> Email </label><br>
+      <input type="email" class="required email" auto-complete = "false" id="mail">
+     <br>
+    <label for="pass"> Password </label><br>
+      <input type="password" class ="required" auto-complete = "false" id="pass">
+     <br>
+    <label for="conPass"> Confirm Password </label><br>
+      <input type="password" class ="required" auto-complete = "false" id="conPass">
+    <br><br>
+    <input type="button" id="added" value="Submit">
+    <br><br>
+  </form>
 </div>
 <!-- SignIn form -->
 <div id="signIn">
-	<form method="get">
-		<label for="email">Email</label><br>
-		<input type="email" id="Logmail">
-		<br>
-		<label for="pass">Password</label><br>
-		<input type="password" id="Logpass">
-		<input type="hidden" id="encryped">
-		<input type="hidden" id="decryptedtxt">
-		<br><br>
-		<input type="button" value="Sign In" id="signin">
-		
-	</form>
+  <form method="get">
+    <label for="email">Email</label><br>
+    <input type="email" id="Logmail">
+    <br>
+    <label for="pass">Password</label><br>
+    <input type="password" id="Logpass">
+    <input type="hidden" id="encryped">
+    <input type="hidden" id="decryptedtxt">
+    <br><br>
+    <input type="button" value="Sign In" id="signin">
+    
+  </form>
 </div>
 <script src="js/index.js"></script>
 <script src="js/Login.js"></script>
