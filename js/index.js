@@ -1,14 +1,22 @@
 $(function(){
 	$("#signUp").hide();
+<<<<<<< HEAD
 	$("#SignUp").click(function() {
 		$("#signIn").slideUp("slow", function() {
 			$("#signUp").slideDown("slow");
 		});
 	});
+=======
+		$("#SignUp").click(function() {
+			$("#signIn").slideUp("slow", function() {
+				$("#signUp").slideDown("slow");
+			});
+		});
+>>>>>>> signIn
 	$("#SignIn").click(function() {
 		$("#signUp").slideUp("slow", function() {
 			$("#signIn").slideDown("slow");
-			});
+		});
 	});
 
 	$("#added").on("click", function(){
