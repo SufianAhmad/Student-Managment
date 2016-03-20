@@ -1,40 +1,18 @@
 $(function(){
-<<<<<<< HEAD
-	$("#signUp").hide();
-<<<<<<< HEAD
-	$("#SignUp").click(function() {
-		$("#signIn").slideUp("slow", function() {
-			$("#signUp").slideDown("slow");
-		});
-	});
-=======
-		$("#SignUp").click(function() {
-			$("#signIn").slideUp("slow", function() {
-				$("#signUp").slideDown("slow");
-			});
-		});
->>>>>>> signIn
-	$("#SignIn").click(function() {
-		$("#signUp").slideUp("slow", function() {
-			$("#signIn").slideDown("slow");
-		});
-	});
-=======
   $("#signUp").hide();
   $("#SignUp").click(function() {
     $("#signIn").slideUp("slow", function() {
       $("#signUp").slideDown("slow");
     });
   });
+
   $("#SignIn").click(function() {
     $("#signUp").slideUp("slow", function() {
       $("#signIn").slideDown("slow");
     });
   });
->>>>>>> 5645358689a549fa4064d1ef3d0682d784d69dc3
 
   $("#added").on("click", function(){
-
     var Firstname = $('#firstName').val(),
       Lastname = $('#lastName').val(),
       Email = $('#mail').val(),
