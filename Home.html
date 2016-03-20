@@ -4,26 +4,27 @@
 	<title>Home Page</title>
 	
 	<script src="http://code.jquery.com/jquery-1.12.1.min.js"></script>
-    <!-- Bootstrap JS CDN -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    <!-- MD5 encryption CDN -->
-    <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
-    <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/aes.js"></script>
-    <!-- Bootstrap CSS CDN -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <!-- Bootstrap theme CDN -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-    <!-- Font-awsome CDN -->
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <div>
-			<h2>Dashboard</h2>
-		</div>
+  <!-- Bootstrap JS CDN -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <!-- MD5 encryption CDN -->
+  <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
+  <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/aes.js"></script>
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <!-- Bootstrap theme CDN -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+  <!-- Font-awsome CDN -->
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Datatable JS CDN -->
+  <script src = "https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+  <!-- Datatable CSS CDN -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
+  <div align="left">
+		<h2>Dashboard</h2>
+	</div>
 </head>
 <body>
-<!-- Button trigger modal -->
-<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModalNorm">
-    Add New Record
-</button>
+
 <!-- Modal -->
 <div class="modal fade" id="myModalNorm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -40,21 +41,51 @@
       </div>
       <!-- Modal Body -->
       <div class="modal-body">
-        <form role="form">
+        <form role="form" id="formID">
           <div class="form-group">
-            <label for="exampleInputEmail1">Full Name</label>
-              <input type="text" class="form-control" id="exampleInputEmail1"
+            <label for="fullName">Full Name</label>
+              <input type="text" class="form-control" id="fullName" auto-complete = "false"
               	placeholder="Enter full name"/>
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Program</label>
-              <input type="text" class="form-control"
-                id="exampleInputPassword1" placeholder="Program"/>
+            <label for="programDegree">Program</label>
+              <input type="text" class="form-control" auto-complete = "false"
+                id="programDegree" placeholder="Enter degree name"/>
           </div>
-          <button type="submit" class="btn btn-default">Submit</button>
+          <div class="form-group">
+            <label for="Programsession">Session</label>
+              <input type="text" class="form-control" auto-complete = "false"
+                id="programSession" placeholder="Enter session here ex 2008-2010"/>
+          </div>
+
+          <button type="submit" id="btnSubmit" class="btn btn-default">Submit</button>
+          <button type="button" id="btnCancel" class="btn btn-default">Cancel</button>
         </form>
       </div>
     </div>
+  </div>
 </div>
+<!-- Table -->
+<div id="dashTable">
+	<table id="example" class="display" cellspacing="0" width="80%" align="center" border="1px">
+    <thead>
+      <tr>
+        <th>Full Name</th>
+        <th>Program</th>
+        <th>Session</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+    	
+    </tbody>
+  </table>      
+</div>
+<!-- Button trigger modal -->
+<button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModalNorm">
+    Add New Record
+</button>
+<script src="js/tableValues.js"></script>
 </body>
 </html>
