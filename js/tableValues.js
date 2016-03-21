@@ -12,6 +12,20 @@ $(function(){
       { "data": "Session" },
       { "data": "edit" },
       { "data": "del" }
+    ],
+    "columnDefs": [
+      {
+        "render": function (data, type, row) {
+          return '<span class = "editRow"><i class="fa fa-pencil-square-o"></i></span>'
+        },
+        "targets": 3
+      },
+      {
+        "render": function (data, type, row) {
+          return '<a href = "#" onclick=return alrt()><i class="fa fa-times"></i></a>'
+        },
+      "targets": 4
+      }
     ]
   });
   $("#btnSubmit").on("click", function(e){
@@ -25,6 +39,9 @@ $(function(){
       Session: dSession
     };
   });
+  function alrt () {
+    alert("clicked");
+  }
 });
 $("#btnCancel").on("click", function(){
   $('#myModalNorm').modal('toggle');
