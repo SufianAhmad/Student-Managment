@@ -1,12 +1,14 @@
 $(function(){
 
-  var t = $('#example').DataTable({
+  var table = $('#example').DataTable({ 
+    // show data in table on page load
     "ajax": {
       type: "GET",
       url: "https://api.mongolab.com/api/1/databases/mydb/collections/students?apiKey=ftIHhADklaeFUeTw4YzKZdlb_MWQYfGO",
       "dataSrc":""
     },
     "columns": [
+      { "data": "_id.$oid"},
       { "data": "Full_Name" },
       { "data": "Degree" },
       { "data": "Session" },
@@ -16,32 +18,32 @@ $(function(){
     "columnDefs": [
       {
         "render": function (data, type, row) {
-          return '<span class = "editRow"><i class="fa fa-pencil-square-o"></i></span>'
+          return '<button><i class="fa fa-pencil-square-o"></i></button>'
         },
-        "targets": 3
+        "targets": 4
       },
       {
         "render": function (data, type, row) {
-          return '<a href = "#" onclick=return alrt()><i class="fa fa-times"></i></a>'
+          return '<button class = "delet"><i class="fa fa-times"></i></button>'
         },
-      "targets": 4
+      "targets": 5
       }
     ]
   });
-  $("#btnSubmit").on("click", function(e){
-    e.preventDefault();
-    var fullname = $("#fullName").val(),
-      degree = $("#programDegree").val(),
-      dSession = $("#programSession").val();
-    var obj = {
-      Full_Name: fullname,
-      Degree: degree,
-      Session: dSession
-    };
+  $('#example tbody').on( 'click', 'button.delet', function () {
+    // get id of clicked row
+    var id = ($(this).parent().parent().find("td.sorting_1").text());
+    console.log("On click:" + id);
+    // ajax request to delete from db
+    $.ajax({ 
+      type: "DELETE",
+      url: "https://api.mongolab.com/api/1/databases/mydb/collections/students/"+ id +"?apiKey=ftIHhADklaeFUeTw4YzKZdlb_MWQYfGO",
+      contentType: "application/json; charset=utf-8",
+      success: function (data) { 
+        console.log(id);
+      }
+    });
   });
-  function alrt () {
-    alert("clicked");
-  }
 });
 $("#btnCancel").on("click", function(){
   $('#myModalNorm').modal('toggle');
