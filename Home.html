@@ -60,7 +60,6 @@
               <input type="text" class="form-control" auto-complete = "false"
                 id="programSession" placeholder="Enter session here ex 2008-2010"/>
           </div>
-
           <button type="submit" id="btnSubmit" class="btn btn-default">Submit</button>
           <button type="button" id="btnCancel" class="btn btn-default">Cancel</button>
         </form>
@@ -68,9 +67,9 @@
     </div>
   </div>
 </div>
-<!-- delete modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+<!-- Edit Modal -->
+<div class="modal fade" id="myModalEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
     <div class="modal-content">
       <!-- Modal Header -->
       <div class="modal-header">
@@ -79,19 +78,36 @@
           <span class="sr-only">Close</span>
         </button>
         <h4 class="modal-title" id="myModalLabel">
-          Delete
+          Edit Student
         </h4>
       </div>
       <!-- Modal Body -->
       <div class="modal-body">
-      <p>Delete this</p>
-      <div align="right">
-      	<button type="submit" id="btnYes" class="btn btn-default">Yes</button>
-      	<button type="button" id="btnNo" class="btn btn-default">No</button>
-    	</div>
+        <form role="form" id="formID">
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+              <input type="text" class="form-control" id="editName" auto-complete = "false"
+              	placeholder="Enter full name"/>
+          </div>
+          <div class="form-group">
+            <label for="programDegree">Program</label>
+              <input type="text" class="form-control" auto-complete = "false"
+                id="editDegree" placeholder="Enter degree name"/>
+          </div>
+          <div class="form-group">
+            <label for="programSession">Session</label>
+              <input type="text" class="form-control" auto-complete = "false"
+                id="editSession" placeholder="Enter session here ex 2008-2010"/>
+          </div>
+          <button type="submit" id="btnEdit" class="btn btn-default">Update</button>
+          <button type="button" id="btnExit" class="btn btn-default">Cancel</button>
+        </form>
       </div>
     </div>
   </div>
+</div>
+<!-- delete alert -->
+<div class="bb-alert" aria-hidden="true" align="center">
 </div>
 <!-- Table -->
 <div id="dashTable">
