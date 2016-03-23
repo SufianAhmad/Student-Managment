@@ -26,7 +26,7 @@ $(function(){
         "render": function (data, type, row) {
           return '<button class = "delet"><i class="fa fa-times"></i></button>'
         },
-      "targets": 5
+        "targets": 5
       }
     ]
   });
@@ -53,23 +53,26 @@ $(function(){
     });
   });
   $('#example tbody').on( 'click', 'button.edit', function () {
-    var name = $(this).parents('tr').find('td:nth-child(2)').text(),
-      degr = $(this).parents('tr').find('td:nth-child(3)').text(),
-      session = $(this).parents('tr').find('td:nth-child(4)').text();
-    var id = ($(this).parent().parent().find("td.sorting_1").text());  
+    
+    var name = $(this).parents('tr').find('td:nth-child(2)').text();
+    var degr = $(this).parents('tr').find('td:nth-child(3)').text();
+    var session = $(this).parents('tr').find('td:nth-child(4)').text();
+    var id = $(this).parents('tr').find("td.sorting_1").text();  
+    var row = $(this).parents('tr');
 
     console.log(name +" "+ degr +" "+ session);
     $('#myModalEdit').modal('show');
     $('#editName').val(name);
     $('#editDegree').val(degr);
     $('#editSession').val(session);
+    
+    var objc = { 
+      Full_Name: $('#editName').val(),
+      Degree: $('#editDegree').val(),
+      Session: $('#editSession').val() 
+    }
     $("#btnEdit").on("click", function(e){
-      e.preventDefault();
-      var objc = { 
-        Full_Name: $('#editName').val(),
-        Degree: $('#editDegree').val(),
-        Session: $('#editSession').val() 
-      }
+      e.preventDefault(); 
     $.ajax({ 
       type: "PUT",
       url: "https://api.mongolab.com/api/1/databases/mydb/collections/students/"+ id +"?apiKey=ftIHhADklaeFUeTw4YzKZdlb_MWQYfGO",
@@ -77,6 +80,10 @@ $(function(){
       contentType: "application/json; charset=utf-8",
       success: function (data) {
         console.log(data);
+        $('#myModalEdit').modal('toggle');
+        table.cell(row.find('td:nth-child(2)')).data(data.Full_Name);
+        table.cell(row.find('td:nth-child(3)')).data(data.Degree);
+        table.cell(row.find('td:nth-child(4)')).data(data.Session);
       }
     });
   });
