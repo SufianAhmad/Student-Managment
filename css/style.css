@@ -1,0 +1,23 @@
+body {
+  background: #c1bdba;
+  font-family: 'Titillium Web', sans-serif;
+}
+.dashBoard {
+	margin-left: 137px;
+	margin-right: 135px; 
+	/*background: #c1bdba;*/
+}
+.dataTables_filter {
+	margin-right: 135px;
+}
+.dataTables_length {
+	margin-left: 137px;
+}
+.dataTables_info {
+	margin-left: 137px;
+	margin-top: 10px;
+}
+.dataTables_paginate {
+	margin-right: 135px;
+	margin-top: 10px;
+}
