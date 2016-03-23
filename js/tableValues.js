@@ -60,30 +60,36 @@ $(function(){
     var id = $(this).parents('tr').find("td.sorting_1").text();  
     var row = $(this).parents('tr');
 
-    console.log(name +" "+ degr +" "+ session);
+    // console.log(name +" "+ degr +" "+ session +" " +id);
     $('#myModalEdit').modal('show');
     $('#editName').val(name);
     $('#editDegree').val(degr);
     $('#editSession').val(session);
     
+    $("#btnEdit").on("click", function(e){
+      e.preventDefault();
+
+
     var objc = { 
       Full_Name: $('#editName').val(),
       Degree: $('#editDegree').val(),
       Session: $('#editSession').val() 
     }
-    $("#btnEdit").on("click", function(e){
-      e.preventDefault(); 
+    console.log(objc);
+
     $.ajax({ 
       type: "PUT",
       url: "https://api.mongolab.com/api/1/databases/mydb/collections/students/"+ id +"?apiKey=ftIHhADklaeFUeTw4YzKZdlb_MWQYfGO",
       data: JSON.stringify(objc),
       contentType: "application/json; charset=utf-8",
       success: function (data) {
-        console.log(data);
-        $('#myModalEdit').modal('toggle');
+        // console.log(data);
+        
         table.cell(row.find('td:nth-child(2)')).data(data.Full_Name);
         table.cell(row.find('td:nth-child(3)')).data(data.Degree);
         table.cell(row.find('td:nth-child(4)')).data(data.Session);
+        $('#myModalEdit').modal('toggle');
+        // $('#form-update').trigger("reset");
       }
     });
   });
