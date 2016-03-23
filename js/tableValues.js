@@ -52,20 +52,21 @@ $(function(){
       }
     });
   });
+  var name, degr, session, id, row;
   $('#example tbody').on( 'click', 'button.edit', function () {
     
-    var name = $(this).parents('tr').find('td:nth-child(2)').text();
-    var degr = $(this).parents('tr').find('td:nth-child(3)').text();
-    var session = $(this).parents('tr').find('td:nth-child(4)').text();
-    var id = $(this).parents('tr').find("td.sorting_1").text();  
-    var row = $(this).parents('tr');
+    name = $(this).parents('tr').find('td:nth-child(2)').text();
+    degr = $(this).parents('tr').find('td:nth-child(3)').text();
+    session = $(this).parents('tr').find('td:nth-child(4)').text();
+    id = $(this).parents('tr').find("td.sorting_1").text();  
+    row = $(this).parents('tr');
 
     // console.log(name +" "+ degr +" "+ session +" " +id);
     $('#myModalEdit').modal('show');
     $('#editName').val(name);
     $('#editDegree').val(degr);
     $('#editSession').val(session);
-    
+  });
     $("#btnEdit").on("click", function(e){
       e.preventDefault();
 
@@ -89,10 +90,9 @@ $(function(){
         table.cell(row.find('td:nth-child(3)')).data(data.Degree);
         table.cell(row.find('td:nth-child(4)')).data(data.Session);
         $('#myModalEdit').modal('toggle');
-        // $('#form-update').trigger("reset");
+        $('#form-update').trigger("reset");
       }
     });
-  });
   });
 });
 $("#btnCancel").on("click", function(){
