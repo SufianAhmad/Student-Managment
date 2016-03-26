@@ -10,6 +10,9 @@
     <!-- MD5 encryption CDN -->
     <script src="CDN/mD5.js"></script>
     <script src="CDN/aes.js"></script>
+    <!-- idleTimer script -->
+    <script src="js/idleTimer.js"></script>
+    <script src="CDN/dataTable.js"></script>
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <!-- Bootstrap theme CDN -->
@@ -21,6 +24,8 @@
   </div>
 </head>
 <body>
+<div class="bb-alert" aria-hidden="true" align="center">
+</div>
 <div align="center">
   <button id="SignUp"> Sign Up </button>
   <button id="SignIn">Sign In</button>
@@ -60,11 +65,10 @@
     <input type="hidden" id="decryptedtxt">
     <br><br>
     <input type="button" value="Sign In" id="signin">
-    
   </form>
 </div>
 <script src="js/index.js"></script>
-<script src="js/Login.js"></script>
+<script src="js/tableValues.js"></script>
 
 </body>
 </html>

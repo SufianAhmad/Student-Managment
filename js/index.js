@@ -39,14 +39,15 @@ $(function(){
       alert("Password missmatch");
       return;
     };
-    // encrypt password using MD5 technique 
+    // encrypt password
     $("#encryped").val(CryptoJS.AES.encrypt(pass, "/"));
     var enc = $("#encryped").val();
     var objc = {
       First_name: Firstname,
       Last_name: Lastname,
       email: Email,
-      password: enc
+      password: enc,
+      tokken: ""
     };
     ///// ajax request to insert data in mongodb /////
     $.ajax({
