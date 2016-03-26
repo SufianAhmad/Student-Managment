@@ -10,7 +10,9 @@
   <script src="CDN/mD5.js"></script>
   <script src="CDN/aes.js"></script>
   <script src="CDN/dataTable.js"></script>
-  <link rel="stylesheet" type="text/css" href="css/style.css"> 
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <!-- idleTimer script -->
+  <script src="js/idleTimer.js"></script>
   <!-- Bootstrap CSS CDN -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <!-- Bootstrap theme CDN -->
@@ -19,13 +21,14 @@
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- Datatable CSS CDN -->
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
-  <div align="left" class="dashBoard">
-		<h2>Dashboard</h2>
-		<!-- Button trigger modal -->
-		<button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModalNorm">
-    	New
-		</button>
-	</div>
+<div align="left" class="dashBoard">
+	<h2>Dashboard</h2>
+	<!-- Button trigger modal -->
+	<button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModalNorm">
+  	New
+	</button>
+	<label id="state">User is active</label>
+</div>
 </head>
 <body>
 
@@ -94,6 +97,7 @@
             <label for="programDegree">Program</label>
               <input type="text" class="form-control" auto-complete = "false"
                 id="editDegree" placeholder="Enter degree name"/>
+              <input type="hidden" id="encrypted-tokken">
           </div>
           <div class="form-group">
             <label for="programSession">Session</label>
@@ -113,7 +117,7 @@
 <!-- Table -->
 <div id="dashTable">
 	<table id="example" class="display" cellspacing="0" width="80%" align="center" border="1px">
-    <thead>
+    <thead class="table-header">
       <tr>
       	<th>ID</th>
         <th>Full Name</th>
@@ -130,6 +134,5 @@
 </div>
 <script src="js/tableValues.js"></script>
 <!-- <script src="js/add.js"></script> -->
-
 </body>
 </html>

@@ -18,6 +18,7 @@ $(function(){
           // console.log(result);
           // console.log(result.Full_Name);
           table.row.add( [
+            result._id.$oid,
             result.Full_Name,
             result.Degree,
             result.Session,
@@ -31,6 +32,6 @@ $(function(){
     });
       e.preventDefault();
     $('#myModalNorm').modal('toggle');
-    $('#formID').trigger("reset");
+    // $('#formID').trigger("reset");
   });
 });
